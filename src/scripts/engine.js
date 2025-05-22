@@ -205,6 +205,13 @@ function init() {
     
 }
 
-const bgm = document.getElementById("bgm")
-    bgm.play()
-init()
+document.addEventListener("click", async function initGameOnce() {
+    try {
+        await bgm.play();
+    } catch (e) {
+        console.error("Erro ao tocar BGM:", e);
+    }
+
+    init(); 
+    document.removeEventListener("click", initGameOnce);
+});
