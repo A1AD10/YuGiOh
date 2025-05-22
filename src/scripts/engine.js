@@ -206,6 +206,5 @@ function init() {
 }
 
 const bgm = document.getElementById("bgm")
-bgm.play()
-
+    bgm.play()
 init()
